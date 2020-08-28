@@ -133,6 +133,7 @@ export type TransactionOutput = {|
 type TransactionBinOutput = {
     amount: string;
     script_pubkey: string;
+    decred_script_version?: number;
 };
 
 // transaction input, parameter of TxAck message, declared by user or downloaded from backend
