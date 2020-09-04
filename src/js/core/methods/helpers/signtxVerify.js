@@ -80,6 +80,21 @@ const deriveOutputScript = async (getHDNode: GetHDNode, output: TransactionOutpu
     // TODO: implement it
     if (output.multisig) return;
 
+    if (output.script_type === 'SSTXSUBMISSIONPKH') {
+        const h = getAddressHash(output.address, coinInfo)
+        return BitcoinJsScript.sstxSubmissionPKH.output.encode(h);
+    }
+
+    if (output.script_type === 'SSTXSUBMISSIONSH') {
+        const h = getAddressHash(output.address, coinInfo)
+        return BitcoinJsScript.sstxSubmissionSH.output.encode(h);
+    }
+
+    if (output.script_type === 'SSTXCHANGE') {
+        const pkh = getAddressHash(output.address, coinInfo)
+        return BitcoinJsScript.sstxChange.output.encode(pkh);
+    }
+
     const scriptType = output.address_n
         ? getOutputScriptType(output.address_n)
         : getAddressScriptType(output.address, coinInfo);

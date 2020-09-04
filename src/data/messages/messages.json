@@ -1283,6 +1283,18 @@
                                         {
                                             "name": "PAYTOP2SHWITNESS",
                                             "id": 5
+                                        },
+                                        {
+                                            "name": "SSTXSUBMISSIONPKH",
+                                            "id": 6
+                                        },
+                                        {
+                                            "name": "SSTXSUBMISSIONSH",
+                                            "id": 7
+                                        },
+                                        {
+                                            "name": "SSTXCHANGE",
+                                            "id": 8
                                         }
                                     ],
                                     "options": {}
@@ -9658,6 +9670,14 @@
                 {
                     "name": "SPENDP2SHWITNESS",
                     "id": 4
+                },
+                {
+                    "name": "SPENDSSRTX",
+                    "id": 5
+                },
+                {
+                    "name": "SPENDSSGEN",
+                    "id": 6
                 }
             ],
             "options": {}

@@ -94,7 +94,7 @@ export interface MultisigRedeemScriptType {
     m?: number;
 }
 
-export type InputScriptType = 'SPENDADDRESS' | 'SPENDMULTISIG' | 'SPENDWITNESS' | 'SPENDP2SHWITNESS';
+export type InputScriptType = 'SPENDADDRESS' | 'SPENDMULTISIG' | 'SPENDWITNESS' | 'SPENDP2SHWITNESS' | 'SPENDSSRTX' | 'SPENDSSGEN';
 
 // transaction input, parameter of SignTx message, declared by user
 export interface TransactionInput {
@@ -114,7 +114,7 @@ export type TransactionOutput =
     | {
           address: string;
           address_n?: undefined;
-          script_type: 'PAYTOADDRESS';
+          script_type: 'PAYTOADDRESS' | 'SSTXSUBMISSIONPKH' | 'SSTXSUBMISSIONSH' | 'SSTXCHANGE';
           amount: string;
           multisig?: MultisigRedeemScriptType;
       }
