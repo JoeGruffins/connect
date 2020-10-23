@@ -19,16 +19,6 @@
         "javascript"
     ],
     "main": "src/js/index.js",
-    "browser": {
-        "./lib/env/node": "./lib/env/browser",
-        "./lib/env/node/workers": "./lib/env/browser/workers",
-        "./lib/env/node/networkUtils": "./lib/env/browser/networkUtils"
-    },
-    "react-native": {
-        "./lib/env/node": "./lib/env/react-native",
-        "./lib/env/node/workers": "./lib/env/react-native/workers",
-        "./lib/env/node/networkUtils": "./lib/env/react-native/networkUtils"
-    },
     "scripts": {
         "dev": "webpack-dev-server --config ./webpack/config.dev.babel.js --mode development",
         "build": "rm -rf build && webpack --config ./webpack/config.prod.babel.js --progress",
@@ -59,7 +49,6 @@
         "@babel/preset-flow": "7.10.4",
         "@trezor/blockchain-link": "^1.0.14",
         "@trezor/rollout": "^1.0.4",
-        "@trezor/utxo-lib": "^0.1.1",
         "babel-collect-imports": "https://github.com/szymonlesisz/babel-collect-imports",
         "babel-eslint": "^10.1.0",
         "babel-jest": "26.3.0",
@@ -114,13 +103,13 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.11.2",
+        "@trezor/utxo-lib": "https://github.com/JoeGruffins/trezor-utxo-lib#97c8cd1060c73ac65a5bd98d206eef7a3a63fa17",
         "events": "^3.2.0",
         "whatwg-fetch": "^3.4.1"
     },
     "extendedDependencies": {
         "@trezor/blockchain-link": "^1.0.14",
         "@trezor/rollout": "^1.0.4",
-        "@trezor/utxo-lib": "^0.1.1",
         "bchaddrjs": "0.4.9",
         "bignumber.js": "^9.0.0",
         "bowser": "^2.11.0",

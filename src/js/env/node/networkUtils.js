@@ -10,7 +10,10 @@ if (global && typeof global.fetch !== 'function') {
 
 export const httpRequest = async (url: string, type: string): any => {
     let fileUrl: string = url.split('?')[0];
-    fileUrl = path.resolve(__dirname, '../../../', fileUrl);
+    // fileUrl = path.resolve(__dirname, '../../../', fileUrl);
+    // NOTE: decred hack...
+    const dir = process.cwd() + "/node_modules/connect"
+    fileUrl = path.resolve(dir, '.', fileUrl);
     const content = type !== 'binary' ? fs.readFileSync(fileUrl, { encoding: 'utf8' }) : fs.readFileSync(fileUrl);
     if (!content) return null;
 
